@@ -24,11 +24,8 @@
                         <tr v-for="(user,index) in users" :key="index">
                             <td>{{ user.email }}</td>
                             <td>
-                                <a href=""><i class="fas fa-edit"></i></a>
+                                <a :href="'/detail/' + user.id"><i class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt ml-3"></i></a>
-                                <!--
-                                <input class="ml-3" type="checkbox" v-model="user.is_active" v-bind:id="user.id" data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
-                                -->
                             </td>
                         </tr>
                     </tbody>                    
@@ -46,7 +43,7 @@ export default {
 
     data () {
         return {
-            users: [],            
+            users: [],           
         }
     },
 
@@ -55,7 +52,6 @@ export default {
             UserService.find()
             .then((result) => {
                 this.users = result.data;
-                document.querySelector('#list-user').classList.add('dataTables');
             }).catch((error) => {
                 console.log(error);
             });
@@ -64,6 +60,7 @@ export default {
 
     mounted() {
         this.retrieveUsers();
+        document.querySelector('#list-user').classList.add('dataTables');
     }
 }
 

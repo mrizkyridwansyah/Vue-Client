@@ -63,9 +63,20 @@ export default {
 					.then((result) => {
 						this.user.id = result.data.id;
 						this.user.email = result.data.email;
+						this.$swal({
+							type: 'success',
+							icon: 'success',
+							title: 'SUCCESS',
+							text: 'User created successfully'
+						})
 						this.$router.push({ name: "user" });
 					}).catch((err) => {
-						alert(err.response.data.message);					
+						this.$swal({
+							type: 'error',
+							icon: 'error',
+							title: 'Oops...',
+							text: err.response.data.message
+						});					
 					})
 			}
 		}

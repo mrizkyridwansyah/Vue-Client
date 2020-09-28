@@ -17,7 +17,7 @@ export default new Router({
 			component: () => import('./components/user/Add')			
 		},
 		{
-			path: '/user/:id',
+			path: '/detail/:id',
 			name: 'user-detail',
 			component: () => import('./components/user/Show')			
 		}
