@@ -12,7 +12,7 @@ export default new Router({
 			component: () => import('./components/user/Index')			
 		},
 		{
-			path: '/user/add',
+			path: '/adduser',
 			name: 'user-add',
 			component: () => import('./components/user/Add')			
 		},

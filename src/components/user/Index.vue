@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>            
-        <button class="btn btn-primary">Add User</button>
+        <a href="/adduser" class="btn btn-primary">Add User</a>
         <div class="main-card mb-3 card mt-4">
             <div class="card-body">            
                 <table style="width: 100%;" id="list-user" class="table table-hover table-striped table-bordered">

@@ -4,7 +4,11 @@ import http from '../http';
 
 class UserService{
 	find() {
-		return http.get("/user/");
+		return http.get("/user");
+	}
+
+	create(data) {
+		return http.post("/user", data);
 	}
 }
 
